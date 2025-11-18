@@ -1,11 +1,20 @@
 async function inject(id, url) {
   const el = document.getElementById(id);
   if (!el) return;
-  const res = await fetch(url);
-  el.innerHTML = res.ok ? await res.text() : "<!-- kon " + url + " niet laden -->";
+  try {
+    const res = await fetch(url);
+    if (!res.ok) {
+      el.innerHTML = "<!-- kon " + url + " niet laden (HTTP " + res.status + ") -->";
+      return;
+    }
+    el.innerHTML = await res.text();
+  } catch (e) {
+    console.error("Fout bij laden partial:", id, url, e);
+    el.innerHTML = "<!-- kon " + url + " niet laden (fetch error) -->";
+  }
 }
 
-
+// back-to-top init
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
   if (!btn) return;
@@ -33,21 +42,30 @@ function initBackToTop() {
 }
 
 (async () => {
+  // Bepaal de "root" op basis van het pad van dit script
+  let script = document.currentScript;
+  if (!script) {
+    const scripts = document.getElementsByTagName('script');
+    script = scripts[scripts.length - 1];
+  }
+  const scriptSrc = script ? script.src : '';
+  // scriptSrc eindigt op .../assets/js/load-partials.js
+  const root = scriptSrc.includes('/assets/js/')
+    ? scriptSrc.split('/assets/js/')[0] + '/'
+    : '/';
 
-
-  const path = location.pathname.replace(/\/+/g, '/');
-  const pathLower = path.toLowerCase();
-
- 
+  // NL / EN detectie op basis van de URL
+  const pathLower = window.location.pathname.toLowerCase();
   const isEnglish = pathLower.includes('/en/');
 
- 
-  const basePartials = isEnglish ? 'EN/partials' : 'partials';
+  const headerUrl = root + (isEnglish ? 'EN/partials/header.html' : 'partials/header.html');
+  const footerUrl = root + (isEnglish ? 'EN/partials/footer.html' : 'partials/footer.html');
 
-  
-  await inject('site-header', basePartials + '/header.html');
+  // header injecteren
+  await inject('site-header', headerUrl);
 
- 
+  // actieve link bepalen
+  let path = window.location.pathname.replace(/\/+/g, '/');
   let file = path.split('/').pop();
   if (!file || file === '') file = 'home.html';
 
@@ -59,12 +77,12 @@ function initBackToTop() {
     a.classList.toggle('active', targetFile === file);
   });
 
-
-  await inject('site-footer', basePartials + '/footer.html');
+  // footer injecteren
+  await inject('site-footer', footerUrl);
   initBackToTop();
 })();
 
-
+// === Inview animaties ===
 (function initInview() {
   document.querySelectorAll('.fade-section').forEach(section => {
     const items = section.querySelectorAll('[data-ani]');
@@ -84,4 +102,3 @@ function initBackToTop() {
 
   document.querySelectorAll('.fade-section').forEach(s => io.observe(s));
 })();
-
