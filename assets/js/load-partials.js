@@ -10,7 +10,7 @@ function initBackToTop() {
   const btn = document.getElementById('back-to-top');
   if (!btn) return;
 
-  const SHOW_OFFSET = 300; // px scrolldiepte voordat hij verschijnt
+  const SHOW_OFFSET = 300;
 
   function toggleButton() {
     if (window.scrollY > SHOW_OFFSET) {
@@ -29,31 +29,32 @@ function initBackToTop() {
     });
   });
 
-  toggleButton(); // startstate
+  toggleButton();
 }
 
 (async () => {
+
   // pad normaliseren
   const path = location.pathname.replace(/\/+/g, '/');
   const pathLower = path.toLowerCase();
 
-  // EN-detectie: case-insensitive
-  const isEnglish = pathLower.startsWith('/en/');
+  // FIX: GitHub Pages ondersteunt geen absolute /EN/ detectie
+  const isEnglish = pathLower.includes('/en/');
 
-  // let op: map heet "EN" in je project
-  const basePartials = isEnglish ? '/EN/partials' : '/partials';
+  // FIX: géén leading slash → werkt op GitHub Pages én lokaal
+  const basePartials = isEnglish ? 'EN/partials' : 'partials';
 
   // header injecteren
   await inject('site-header', basePartials + '/header.html');
 
-  // actieve link bepalen (werkt voor NL én EN)
+  // actieve link bepalen
   let file = path.split('/').pop();
-  if (!file || file === '') file = 'home.html'; // root -> home
+  if (!file || file === '') file = 'home.html';
 
   const links = document.querySelectorAll('.nav a[href]');
   links.forEach(a => {
     const href = a.getAttribute('href') || '';
-    const targetPath = href.replace(/^\//, ''); // eerste / strippen
+    const targetPath = href.replace(/^\//, '');
     const targetFile = targetPath.split('/').pop() || 'home.html';
     a.classList.toggle('active', targetFile === file);
   });
