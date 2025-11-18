@@ -5,7 +5,7 @@ async function inject(id, url) {
   el.innerHTML = res.ok ? await res.text() : "<!-- kon " + url + " niet laden -->";
 }
 
-// back-to-top init
+
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
   if (!btn) return;
@@ -34,20 +34,20 @@ function initBackToTop() {
 
 (async () => {
 
-  // pad normaliseren
+
   const path = location.pathname.replace(/\/+/g, '/');
   const pathLower = path.toLowerCase();
 
-  // FIX: GitHub Pages ondersteunt geen absolute /EN/ detectie
+ 
   const isEnglish = pathLower.includes('/en/');
 
-  // FIX: géén leading slash → werkt op GitHub Pages én lokaal
+ 
   const basePartials = isEnglish ? 'EN/partials' : 'partials';
 
-  // header injecteren
+  
   await inject('site-header', basePartials + '/header.html');
 
-  // actieve link bepalen
+ 
   let file = path.split('/').pop();
   if (!file || file === '') file = 'home.html';
 
@@ -59,12 +59,12 @@ function initBackToTop() {
     a.classList.toggle('active', targetFile === file);
   });
 
-  // footer injecteren
+
   await inject('site-footer', basePartials + '/footer.html');
   initBackToTop();
 })();
 
-// === Inview animaties ===
+
 (function initInview() {
   document.querySelectorAll('.fade-section').forEach(section => {
     const items = section.querySelectorAll('[data-ani]');
@@ -84,3 +84,4 @@ function initBackToTop() {
 
   document.querySelectorAll('.fade-section').forEach(s => io.observe(s));
 })();
+
