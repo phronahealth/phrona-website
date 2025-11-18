@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina niet gevonden · Phrona Health</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 85vh;
+      padding: 60px 20px;
+    }
+    .error-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 60px 48px;
+      max-width: 720px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(0,0,0,.08);
+    }
+    .error-card img {
+      max-width: 380px;
+      width: 100%;
+      height: auto;
+      opacity: 0.95;
+      margin-bottom: 28px;
+    }
+    .error-card h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin: 12px 0 10px;
+    }
+    .error-card p {
+      color: #334155;
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      border-radius: 12px;
+      background: var(--brand, #015742);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+    .btn-home:hover {
+      background: #013f32;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0,0,0,.15);
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container page fade-section">
+    <div class="error-card" data-ani>
+      <img src="assets/img/404.png" alt="Pagina niet gevonden">
+      <h1>Pagina niet gevonden</h1>
+      <p>De pagina die je zoekt bestaat niet meer of is verplaatst.<br>Controleer het adres of ga terug naar de homepage.</p>
+      <a href="home.html" class="btn-home">← Terug naar home</a>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/load-partials.js"></script>
+</body>
+</html>

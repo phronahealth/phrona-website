@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Afspraak maken · Phrona Health</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container page" id="content">
+    <!-- Intro -->
+    <section class="hero fade-section" aria-labelledby="page-title">
+      <h1 id="page-title" data-ani>Plan een afspraak</h1>
+      <p class="lead" data-ani>
+        Klaar om te starten met uw gezondheidsreis? Vul het formulier in en wij nemen binnen 24 uur contact met u op. Liever direct contact opnemen kan ook via telefoon, e-mail of WhatsApp.
+      </p>
+<nav class="services-subnav" aria-label="Inhoud">
+  <a href="#contact-opties">Contactopties</a>
+  <a href="#contactformulier">Contactformulier</a>
+  <a href="#locatie">Locaties en openingstijden</a>
+</nav>
+    </section>
+    <!-- Contact + illustratie -->
+   <section class="card contact-hero fade-section" aria-labelledby="contact-opties">
+  <img src="assets/img/contact.png" alt="Illustratie contactmoment">
+  <div>
+    <h2 id="contact-opties">Contactopties</h2>
+    <ul class="contact-links">
+      <li data-ani><strong>Telefoon:</strong> <a class="link" href="tel:+31101234567">06 12 34 56 78</a></li>
+      <li data-ani><strong>WhatsApp:</strong> <a class="link" href="https://wa.me/31612345678" rel="noopener">06 12 34 56 78</a></li>
+      <li data-ani><strong>E-mail:</strong> <a class="link" href="mailto:info@phrona.nl">info@phrona.nl</a></li>
+    </ul>
+  </div>
+</section>
+
+
+    <!-- Formulier -->
+    <section class="fade-section" aria-labelledby="contactformulier">
+      <form class="form card"
+            action="https://formsubmit.co/info@phrona.nl"
+            method="POST"
+            novalidate>
+        <h2 id="contactformulier" data-ani>Contactformulier</h2>
+
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_subject" value="Nieuw bericht via Phrona Health website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://phrona.nl/bedankt.html">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="grid" data-ani>
+          <label>Naam
+            <input type="text" name="naam" required />
+          </label>
+
+          <label>E-mail
+            <input type="email" name="email" required />
+          </label>
+
+          <label>Telefoon
+            <input type="tel" name="telefoon" />
+          </label>
+
+          <label>Onderwerp
+            <select name="onderwerp" required>
+              <option value="" disabled selected hidden>Kies onderwerp</option>
+              <option>Diëtetiek</option>
+              <option>Fysiotherapie</option>
+              <option>Bedrijfsbegeleiding</option>
+              <option>Algemene vraag</option>
+            </select>
+          </label>
+
+          <label class="full">Bericht
+            <textarea name="bericht" rows="6" maxlength="600" required></textarea>
+            <small style="color:#64748b;">Max. 600 tekens</small>
+          </label>
+        </div>
+
+        <label class="full consent">
+          <input type="checkbox" name="toestemming" required>
+          Door een afspraak te maken verklaart u kennis te hebben genomen van onze
+          <a class="link" href="privacy.html">Privacyverklaring</a> en
+          <a class="link" href="algemenevoorwaarden.html">Algemene Voorwaarden.</a>
+        </label>
+
+        <button type="submit" class="btn btn-primary">Versturen</button>
+
+        <p style="margin-top:10px; color:#334155;">
+          Lukt verzenden niet? Bel <a class="link" href="tel:+31612345678">0612345678</a> of stuur een bericht via
+          <a class="link" href="https://wa.me/31612345678" rel="noopener">WhatsApp</a>.
+        </p>
+      </form>
+    </section>
+
+    <!-- Locaties -->
+    <section class="content fade-section" id="locatie">
+      <h2>Locaties en openingstijden</h2>
+      <div class="service">
+        <div>
+          <address style="font-style:normal">
+            <strong>Phrona Health</strong><br>
+            Straatnaam 123<br>
+            1234 AB Plaats<br>
+          </address>
+          <p>
+            <a class="btn-primary small"
+               href="https://maps.google.com/?q=Phrona Health, Straatnaam 123"
+               target="_blank" rel="noopener">
+              Open in Google Maps
+            </a>
+          </p>
+        </div>
+
+        <div>
+          <div class="openingstijden">
+            <h3>Openingstijden</h3>
+            <table class="openingstijden-table" aria-describedby="locatie">
+              <tbody>
+                <tr><td>Maandag</td><td class="time">08:00–17:00</td></tr>
+                <tr><td>Dinsdag</td><td class="time">08:00–17:00</td></tr>
+                <tr><td>Woensdag</td><td class="time">08:00–17:00</td></tr>
+                <tr><td>Donderdag</td><td class="time">08:00–17:00</td></tr>
+                <tr><td>Vrijdag</td><td class="time">08:00–16:00</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-embed">
+        <iframe
+          title="Kaart Phrona Health"
+          src="https://www.google.com/maps?q=Straatnaam%20123%20Plaats&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/load-partials.js"></script>
+</body>
+</html>

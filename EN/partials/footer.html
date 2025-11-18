@@ -1,0 +1,65 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-top container">
+
+    <div class="footer-left">
+      <a href="home.html" class="brand-logo" aria-label="Phrona Health">
+        <img src="../assets/img/logo-footer.png" alt="Phrona Health logo">
+      </a>
+
+      <a class="social ig"
+         href="https://instagram.com/phronahealth"
+         target="_blank"
+         rel="noopener"
+         aria-label="Instagram">
+        <span class="ig-inner">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+               viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5"
+                  fill="none" stroke="#fff" stroke-width="3.2"/>
+            <circle cx="12" cy="12" r="4"
+                    fill="none" stroke="#fff" stroke-width="1.8"/>
+            <circle cx="18" cy="6" r="1" fill="#fff"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+
+    <div class="footer-center">
+      <p class="footer-contact">
+        Gezondheidsstraat 42<br>
+        1234 AB Rotterdam<br>
+        <a href="tel:+31612345678">06 12 34 56 78</a><br>
+        <a href="mailto:info@phrona.nl">info@phrona.nl</a>
+      </p>
+      <a href="contact.html" class="btn-ghost footer-cta-main">Sign up</a>
+    </div>
+
+    <nav class="footer-menu" aria-label="Footer menu">
+      <h3 class="footer-menu-title">Menu</h3>
+      <a href="diensten.html">Services</a>
+      <a href="tarieven.html">Fees</a>
+      <a href="kennisbank.html">Knowledge base</a>
+      <a href="over.html">About us</a>
+      <a href="algemenevoorwaarden.html">Terms & conditions</a>
+      <a href="privacy.html">Privacy policy</a>
+    </nav>
+  </div>
+
+  <div class="footer-meta container">
+    <p class="copyright">
+      &copy; 2022–<span id="year"></span> <strong>Phrona Health</strong>. All rights reserved.
+    </p>
+  </div>
+
+  <button
+    id="back-to-top"
+    class="back-to-top"
+    type="button"
+    aria-label="Back to top">
+    ↑
+  </button>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</footer>
