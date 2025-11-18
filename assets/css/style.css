@@ -974,11 +974,11 @@ main .btn-primary:last-of-type{
   color:#475569;
   text-align:left;
   margin-bottom:6px;
-  border:1px solid var(--border, #e5e7eb);
-  border-radius:12px;
+  border:none;
+  border-radius:0;
   border-collapse:separate;
   border-spacing:0;
-  overflow:hidden;
+  overflow:visible;
 }
 
 @media (max-width:900px){
@@ -1964,3 +1964,4 @@ html {
     margin-top:0;
   }
 }
+
