@@ -14,7 +14,6 @@ async function inject(id, url) {
   }
 }
 
-
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
   if (!btn) return;
@@ -42,11 +41,18 @@ function initBackToTop() {
 }
 
 (async () => {
+  let script = document.currentScript;
+  if (!script) {
+    const scripts = document.getElementsByTagName('script');
+    script = scripts[scripts.length - 1];
+  }
+  const scriptSrc = script ? script.src : '';
+  // scriptSrc eindigt op .../assets/js/load-partials.js
+  const root = scriptSrc.includes('/assets/js/')
+    ? scriptSrc.split('/assets/js/')[0] + '/'
+    : '/';
 
-
-  const root = '/';
-
-
+  // NL / EN detectie op basis van de URL
   const pathLower = window.location.pathname.toLowerCase();
   const isEnglish = pathLower.includes('/en/');
 
@@ -55,6 +61,7 @@ function initBackToTop() {
 
 
   await inject('site-header', headerUrl);
+
 
   let path = window.location.pathname.replace(/\/+/g, '/');
   let file = path.split('/').pop();
@@ -70,7 +77,6 @@ function initBackToTop() {
 
 
   await inject('site-footer', footerUrl);
-
   initBackToTop();
 })();
 
