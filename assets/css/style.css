@@ -24,6 +24,8 @@
 
 html,
 body{
+  max-width: 100%;
+  overflow-x: hidden;
   height:100%;
 }
 
@@ -1301,8 +1303,6 @@ main .btn-primary:last-of-type{
   font-size:.9rem;
   color:#475569;
 }
-
-/* stats in expertise-sectie */
 .stats-row{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -1400,6 +1400,7 @@ main .btn-primary:last-of-type{
   background:#e9f8f4;
   border-color:#9be7d6;
 }
+
 /* ================================
    PROFIEL – Opleiding tijdlijn
    ================================ */
@@ -1964,4 +1965,18 @@ html {
     margin-top:0;
   }
 }
+
+/* fix voor overlappende woorden in header teamlid */
+.card,
+.service,
+.team,
+.kpi,
+.stat-card,
+.profile-header,
+.nameblock {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+
 
