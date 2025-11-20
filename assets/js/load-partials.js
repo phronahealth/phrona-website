@@ -1,3 +1,6 @@
+// ===============================================
+// Inject partials (header + footer)
+// ===============================================
 async function inject(id, url) {
   const el = document.getElementById(id);
   if (!el) return;
@@ -14,6 +17,9 @@ async function inject(id, url) {
   }
 }
 
+// ===============================================
+// Back-to-top button
+// ===============================================
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
   if (!btn) return;
@@ -40,6 +46,9 @@ function initBackToTop() {
   toggleButton();
 }
 
+// ===============================================
+// Header + Footer injectie + active nav
+// ===============================================
 (async () => {
   let script = document.currentScript;
   if (!script) {
@@ -47,21 +56,18 @@ function initBackToTop() {
     script = scripts[scripts.length - 1];
   }
   const scriptSrc = script ? script.src : '';
-  // scriptSrc eindigt op .../assets/js/load-partials.js
+
   const root = scriptSrc.includes('/assets/js/')
     ? scriptSrc.split('/assets/js/')[0] + '/'
     : '/';
 
-  // NL / EN detectie op basis van de URL
   const pathLower = window.location.pathname.toLowerCase();
   const isEnglish = pathLower.includes('/en/');
 
   const headerUrl = root + (isEnglish ? 'EN/partials/header.html' : 'partials/header.html');
   const footerUrl = root + (isEnglish ? 'EN/partials/footer.html' : 'partials/footer.html');
 
-
   await inject('site-header', headerUrl);
-
 
   let path = window.location.pathname.replace(/\/+/g, '/');
   let file = path.split('/').pop();
@@ -75,12 +81,13 @@ function initBackToTop() {
     a.classList.toggle('active', targetFile === file);
   });
 
-
   await inject('site-footer', footerUrl);
   initBackToTop();
 })();
 
-
+// ===============================================
+// Fade-in sections
+// ===============================================
 (function initInview() {
   document.querySelectorAll('.fade-section').forEach(section => {
     const items = section.querySelectorAll('[data-ani]');
@@ -99,4 +106,18 @@ function initBackToTop() {
   }, { threshold: 0.2 });
 
   document.querySelectorAll('.fade-section').forEach(s => io.observe(s));
+})();
+
+// ===============================================
+// FAVICON (automatisch voor NL + EN)
+// ===============================================
+(function() {
+  const link = document.createElement("link");
+  link.rel = "icon";
+  link.type = "image/png";
+
+  const isEnglish = window.location.pathname.toLowerCase().includes('/en/');
+  link.href = isEnglish ? "../assets/img/favicon.png" : "assets/img/favicon.png";
+
+  document.head.appendChild(link);
 })();
