@@ -14,27 +14,33 @@
     <section class="hero fade-section" aria-labelledby="page-title">
       <h1 id="page-title" data-ani>Plan een afspraak</h1>
       <p class="lead" data-ani>
-        Klaar om te starten met uw gezondheidsreis? Vul het formulier in en wij nemen binnen 24 uur contact met u op. Liever direct contact opnemen kan ook via telefoon, e-mail of WhatsApp.
+        Klaar om te starten met je gezondheidsreis? Vul het formulier in en we nemen binnen twee werkdagen contact met je op. Liever direct contact opnemen kan ook via telefoon, e-mail of WhatsApp.
       </p>
-<nav class="services-subnav" aria-label="Inhoud">
-  <a href="#contact-opties">Contactopties</a>
-  <a href="#contactformulier">Contactformulier</a>
-  <a href="#locatie">Locaties en openingstijden</a>
-</nav>
+      <nav class="services-subnav" aria-label="Inhoud">
+        <a href="#contact-opties">Contactopties</a>
+        <a href="#contactformulier">Contactformulier</a>
+        <a href="#locatie">Locaties en openingstijden</a>
+      </nav>
     </section>
-    <!-- Contact + illustratie -->
-   <section class="card contact-hero fade-section" aria-labelledby="contact-opties">
-  <img src="assets/img/contact.png" alt="Illustratie contactmoment">
-  <div>
-    <h2 id="contact-opties">Contactopties</h2>
-    <ul class="contact-links">
-      <li data-ani><strong>Telefoon:</strong> <a class="link" href="tel:+3162191403">06 21 91 40 3</a></li>
-      <li data-ani><strong>WhatsApp:</strong> <a class="link" href="https://wa.me/3162191403" rel="noopener">06 21 91 40 3</a></li>
-      <li data-ani><strong>E-mail:</strong> <a class="link" href="mailto:info@phrona.nl">info@phrona.nl</a></li>
-    </ul>
-  </div>
-</section>
 
+    <!-- Contact + illustratie -->
+    <section class="card contact-hero fade-section" aria-labelledby="contact-opties">
+      <img src="assets/img/contact.png" alt="Illustratie contactmoment">
+      <div>
+        <h2 id="contact-opties">Contactopties</h2>
+        <ul class="contact-links">
+          <li data-ani><strong>Telefoon:</strong> <a class="link" href="tel:+31617660635" style="color:inherit; text-decoration:none;">06 17 66 06 35</a></li>
+          <li data-ani><strong>WhatsApp:</strong> <a class="link" href="https://wa.me/31617660635" rel="noopener" style="color:inherit; text-decoration:none;">06 17 66 06 35</a></li>
+          <li data-ani><strong>E-mail:</strong> <a class="link" href="mailto:info@phrona.nl">info@phrona.nl</a></li>
+        </ul>
+        <p data-ani style="margin-top:1rem; color:#64748b; font-size:0.9rem;">
+          We reageren binnen twee werkdagen.
+        </p>
+        <p data-ani style="margin-top:0.5rem; color:#64748b; font-size:0.9rem;">
+          Diëtetiek is vaak (deels) vergoed vanuit je basisverzekering — check je polis of neem contact op voor meer informatie.
+        </p>
+      </div>
+    </section>
 
     <!-- Formulier -->
     <section class="fade-section" aria-labelledby="contactformulier">
@@ -52,15 +58,15 @@
 
         <div class="grid" data-ani>
           <label>Naam
-            <input type="text" name="naam" required />
+            <input type="text" name="naam" autocomplete="name" required />
           </label>
 
           <label>E-mail
-            <input type="email" name="email" required />
+            <input type="email" name="email" autocomplete="email" required />
           </label>
 
           <label>Telefoon
-            <input type="tel" name="telefoon" />
+            <input type="tel" name="telefoon" autocomplete="tel" />
           </label>
 
           <label>Onderwerp
@@ -81,7 +87,7 @@
 
         <label class="full consent">
           <input type="checkbox" name="toestemming" required>
-          Door een afspraak te maken verklaart u kennis te hebben genomen van onze
+          Door dit contactformulier in te vullen verklaar je kennis te hebben genomen van onze
           <a class="link" href="privacy.html">Privacyverklaring</a> en
           <a class="link" href="algemenevoorwaarden.html">Algemene Voorwaarden.</a>
         </label>
@@ -89,8 +95,8 @@
         <button type="submit" class="btn btn-primary">Versturen</button>
 
         <p style="margin-top:10px; color:#334155;">
-          Lukt verzenden niet? Bel <a class="link" href="tel:+3162191403">062191403</a> of stuur een bericht via
-          <a class="link" href="https://wa.me/3162191403" rel="noopener">WhatsApp</a>.
+          Lukt verzenden niet? Bel <a class="link" href="tel:+31617660635" style="color:inherit; text-decoration:none;">06 17 66 06 35</a> of stuur een bericht via
+          <a class="link" href="https://wa.me/31617660635" rel="noopener">WhatsApp</a>.
         </p>
       </form>
     </section>
@@ -142,6 +148,14 @@
       </div>
     </section>
 
+    <!-- Wkkgz -->
+    <section class="fade-section" style="margin-top:2rem;">
+      <p style="color:#64748b; font-size:0.875rem;">
+        Heb je een klacht over onze zorg? We lossen dit graag samen op. Phrona Health is aangesloten bij het
+        <a class="link" href="https://www.klachtenloketparamedici.nl" target="_blank" rel="noopener">Klachtenloket Paramedici</a>
+        conform de Wet kwaliteit, klachten en geschillen zorg (Wkkgz).
+      </p>
+    </section>
 
   </main>
 
