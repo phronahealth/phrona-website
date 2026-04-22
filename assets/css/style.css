@@ -1242,6 +1242,9 @@ main .btn-primary:last-of-type{
   gap:12px;
   margin-top:24px;
 }
+.service.team .kpis {
+  grid-template-columns: repeat(2, 1fr);
+}
 .kpi{
   border:1px solid #e5e7eb;
   border-radius:10px;
