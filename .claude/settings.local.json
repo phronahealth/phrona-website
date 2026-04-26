@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c ' *)",
+      "Bash(python -c \"from PIL import Image; img = Image.open\\('C:/Users/marxi/Desktop/phrona-website-main\\(1\\)/phrona-website-main/assets/img/logo.png'\\); print\\(img.size, img.mode\\)\")",
+      "Bash(pip install *)",
+      "Bash(python -c ' *)"
+    ]
+  }
+}
