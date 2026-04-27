@@ -1,18 +1,18 @@
 const NL_HEADER = `<div id="top"></div>
 <header class="site-header">
   <div class="container">
-    <a class="logo" href="index.html">
-      <img src="assets/img/logo.png" alt="Phrona Health">
+    <a class="logo" href="/">
+      <img src="/assets/img/logo.png" alt="Phrona Health">
     </a>
     <div class="lang-switch">
-      <a href="index.html" aria-label="Nederlands" class="lang lang-nl">
+      <a href="/" aria-label="Nederlands" class="lang lang-nl">
         <svg viewBox="0 0 4 3" aria-hidden="true" focusable="false">
           <rect width="4" height="1" y="0" fill="#AE1C28"/>
           <rect width="4" height="1" y="1" fill="#FFFFFF"/>
           <rect width="4" height="1" y="2" fill="#21468B"/>
         </svg>
       </a>
-      <a href="EN/index.html" aria-label="English" class="lang lang-en">
+      <a href="/EN/" aria-label="English" class="lang lang-en">
         <svg viewBox="0 0 4 3" aria-hidden="true" focusable="false">
           <clipPath id="uk-4x3"><path d="M0,0 v3 h4 v-3 z"/></clipPath>
           <g clip-path="url(#uk-4x3)">
@@ -27,20 +27,20 @@ const NL_HEADER = `<div id="top"></div>
     </div>
     <nav class="nav" aria-label="Hoofdmenu">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li class="has-submenu">
-          <a href="diensten.html" aria-haspopup="true" aria-expanded="false">Diensten</a>
+          <a href="/diensten" aria-haspopup="true" aria-expanded="false">Diensten</a>
           <ul class="submenu" aria-label="Submenu Diensten">
-            <li><a href="dietetiek.html">Di&euml;tetiek</a></li>
-            <li><a href="fysiotherapie.html">Fysiotherapie</a></li>
-            <li><a href="advies.html">Advies</a></li>
+            <li><a href="/dietetiek">Di&euml;tetiek</a></li>
+            <li><a href="/fysiotherapie">Fysiotherapie</a></li>
+            <li><a href="/advies">Advies</a></li>
           </ul>
         </li>
-        <li><a href="tarieven.html">Tarieven</a></li>
-        <li><a href="kennisbank.html">Kennisbank</a></li>
-        <li><a href="verwijzers.html">Verwijzers</a></li>
-        <li><a href="over.html">Over ons</a></li>
-        <li><a class="btn-outline" href="contact.html">Contact</a></li>
+        <li><a href="/tarieven">Tarieven</a></li>
+        <li><a href="/kennisbank">Kennisbank</a></li>
+        <li><a href="/verwijzers">Verwijzers</a></li>
+        <li><a href="/over">Over ons</a></li>
+        <li><a class="btn-outline" href="/contact">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -49,8 +49,8 @@ const NL_HEADER = `<div id="top"></div>
 const NL_FOOTER = `<footer class="site-footer" role="contentinfo">
   <div class="footer-top container">
     <div class="footer-left">
-      <a href="index.html" class="brand-logo" aria-label="Phrona Health">
-        <img src="assets/img/logo-footer.png" alt="Phrona Health logo">
+      <a href="/" class="brand-logo" aria-label="Phrona Health">
+        <img src="/assets/img/logo-footer.png" alt="Phrona Health logo">
       </a>
       <a class="social ig" href="https://instagram.com/phronahealth" target="_blank" rel="noopener" aria-label="Instagram">
         <span class="ig-inner">
@@ -69,18 +69,18 @@ const NL_FOOTER = `<footer class="site-footer" role="contentinfo">
         <a href="tel:+31617660635">06 17660635</a><br>
         <a href="mailto:info@phrona.nl">info@phrona.nl</a>
       </p>
-      <a href="contact.html" class="btn-ghost footer-cta-main">Meld je aan</a>
+      <a href="/contact" class="btn-ghost footer-cta-main">Meld je aan</a>
     </div>
     <nav class="footer-menu" aria-label="Footer menu">
       <h3 class="footer-menu-title">Menu</h3>
-      <a href="diensten.html">Diensten</a>
-      <a href="tarieven.html">Tarieven</a>
-      <a href="kennisbank.html">Kennisbank</a>
-      <a href="verwijzers.html">Verwijzers</a>
-      <a href="over.html">Over ons</a>
-      <a href="contact.html">Contact</a>
-      <a href="algemenevoorwaarden.html">Algemene voorwaarden</a>
-      <a href="privacy.html">Privacyverklaring</a>
+      <a href="/diensten">Diensten</a>
+      <a href="/tarieven">Tarieven</a>
+      <a href="/kennisbank">Kennisbank</a>
+      <a href="/verwijzers">Verwijzers</a>
+      <a href="/over">Over ons</a>
+      <a href="/contact">Contact</a>
+      <a href="/algemenevoorwaarden">Algemene voorwaarden</a>
+      <a href="/privacy">Privacyverklaring</a>
     </nav>
   </div>
   <div class="footer-meta container">
@@ -93,18 +93,18 @@ const NL_FOOTER = `<footer class="site-footer" role="contentinfo">
 const EN_HEADER = `<div id="top"></div>
 <header class="site-header">
   <div class="container">
-    <a class="logo" href="index.html">
-      <img src="../assets/img/logo.png" alt="Phrona Health">
+    <a class="logo" href="/EN/">
+      <img src="/assets/img/logo.png" alt="Phrona Health">
     </a>
     <div class="lang-switch">
-      <a href="../index.html" aria-label="Nederlands" class="lang lang-nl">
+      <a href="/" aria-label="Nederlands" class="lang lang-nl">
         <svg viewBox="0 0 4 3" aria-hidden="true" focusable="false">
           <rect width="4" height="1" y="0" fill="#AE1C28"/>
           <rect width="4" height="1" y="1" fill="#FFFFFF"/>
           <rect width="4" height="1" y="2" fill="#21468B"/>
         </svg>
       </a>
-      <a href="index.html" aria-label="English" class="lang lang-en">
+      <a href="/EN/" aria-label="English" class="lang lang-en">
         <svg viewBox="0 0 4 3" aria-hidden="true" focusable="false">
           <clipPath id="uk-4x3"><path d="M0,0 v3 h4 v-3 z"/></clipPath>
           <g clip-path="url(#uk-4x3)">
@@ -119,20 +119,20 @@ const EN_HEADER = `<div id="top"></div>
     </div>
     <nav class="nav" aria-label="Main menu">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="/EN/">Home</a></li>
         <li class="has-submenu">
-          <a href="diensten.html">Services</a>
+          <a href="/EN/diensten">Services</a>
           <ul class="submenu">
-            <li><a href="dietetiek.html">Dietetics</a></li>
-            <li><a href="fysiotherapie.html">Physiotherapy</a></li>
-            <li><a href="../advies.html">Advies</a></li>
+            <li><a href="/EN/dietetiek">Dietetics</a></li>
+            <li><a href="/EN/fysiotherapie">Physiotherapy</a></li>
+            <li><a href="/EN/advies">Advisory</a></li>
           </ul>
         </li>
-        <li><a href="tarieven.html">Fees</a></li>
-        <li><a href="kennisbank.html">Knowledge base</a></li>
-        <li><a href="verwijzers.html">Referrers</a></li>
-        <li><a href="over.html">About us</a></li>
-        <li><a class="btn-outline" href="contact.html">Contact</a></li>
+        <li><a href="/EN/tarieven">Fees</a></li>
+        <li><a href="/EN/kennisbank">Knowledge base</a></li>
+        <li><a href="/EN/verwijzers">Referrers</a></li>
+        <li><a href="/EN/over">About us</a></li>
+        <li><a class="btn-outline" href="/EN/contact">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -141,8 +141,8 @@ const EN_HEADER = `<div id="top"></div>
 const EN_FOOTER = `<footer class="site-footer" role="contentinfo">
   <div class="footer-top container">
     <div class="footer-left">
-      <a href="index.html" class="brand-logo" aria-label="Phrona Health">
-        <img src="../assets/img/logo-footer.png" alt="Phrona Health logo">
+      <a href="/EN/" class="brand-logo" aria-label="Phrona Health">
+        <img src="/assets/img/logo-footer.png" alt="Phrona Health logo">
       </a>
       <a class="social ig" href="https://instagram.com/phronahealth" target="_blank" rel="noopener" aria-label="Instagram">
         <span class="ig-inner">
@@ -161,18 +161,18 @@ const EN_FOOTER = `<footer class="site-footer" role="contentinfo">
         <a href="tel:+31617660635">06 17660635</a><br>
         <a href="mailto:info@phrona.nl">info@phrona.nl</a>
       </p>
-      <a href="contact.html" class="btn-ghost footer-cta-main">Sign up</a>
+      <a href="/EN/contact" class="btn-ghost footer-cta-main">Sign up</a>
     </div>
     <nav class="footer-menu" aria-label="Footer menu">
       <h3 class="footer-menu-title">Menu</h3>
-      <a href="diensten.html">Services</a>
-      <a href="tarieven.html">Fees</a>
-      <a href="kennisbank.html">Knowledge base</a>
-      <a href="verwijzers.html">Referrers</a>
-      <a href="over.html">About us</a>
-      <a href="contact.html">Contact</a>
-      <a href="algemenevoorwaarden.html">Terms &amp; conditions</a>
-      <a href="privacy.html">Privacy policy</a>
+      <a href="/EN/diensten">Services</a>
+      <a href="/EN/tarieven">Fees</a>
+      <a href="/EN/kennisbank">Knowledge base</a>
+      <a href="/EN/verwijzers">Referrers</a>
+      <a href="/EN/over">About us</a>
+      <a href="/EN/contact">Contact</a>
+      <a href="/EN/algemenevoorwaarden">Terms &amp; conditions</a>
+      <a href="/EN/privacy">Privacy policy</a>
     </nav>
   </div>
   <div class="footer-meta container">
@@ -187,7 +187,7 @@ const EN_FOOTER = `<footer class="site-footer" role="contentinfo">
 // ===============================================
 (function injectPartials() {
   const pathLower = window.location.pathname.toLowerCase();
-  const isEnglish = pathLower.includes('/en/');
+  const isEnglish = pathLower.startsWith('/en/') || pathLower === '/en';
 
   const headerEl = document.getElementById('site-header');
   const footerEl = document.getElementById('site-footer');
@@ -196,10 +196,12 @@ const EN_FOOTER = `<footer class="site-footer" role="contentinfo">
   if (footerEl) footerEl.outerHTML = isEnglish ? EN_FOOTER : NL_FOOTER;
 
   // Active nav link
-  const file = window.location.pathname.split('/').pop() || 'index.html';
+  let current = window.location.pathname.replace(/\/$/, '');
+  if (current === '') current = '/';
   document.querySelectorAll('.nav a[href]').forEach(a => {
-    const href = a.getAttribute('href') || '';
-    if (href.split('/').pop() === file) a.classList.add('active');
+    let href = (a.getAttribute('href') || '').replace(/\/$/, '');
+    if (href === '') href = '/';
+    if (href === current) a.classList.add('active');
   });
 
   document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
@@ -242,7 +244,6 @@ initBackToTop();
   const link = document.createElement('link');
   link.rel = 'icon';
   link.type = 'image/png';
-  const isEnglish = window.location.pathname.toLowerCase().includes('/en/');
-  link.href = isEnglish ? '../assets/img/favicon.png' : 'assets/img/favicon.png';
+  link.href = '/assets/img/favicon.png';
   document.head.appendChild(link);
 })();
