@@ -812,6 +812,14 @@ main .btn-primary:last-of-type{
 .service-row_body h2{
   margin:0 0 10px;
 }
+.service-title-link{
+  color:inherit;
+  text-decoration:none;
+}
+.service-title-link:hover{
+  color:var(--brand);
+  text-decoration:underline;
+}
 .service-row_body p{
   margin:0 0 14px;
   color:#334155;
@@ -877,8 +885,19 @@ main .btn-primary:last-of-type{
 }
 
 .badges{
+  display:flex;
+  flex-wrap:wrap;
   gap:10px;
   margin:10px 0 14px;
+}
+.badge{
+  background:#e9f3f1;
+  border:1px solid #9abbb2;
+  border-radius:8px;
+  padding:8px 12px;
+  font-size:.875rem;
+  color:#334155;
+  line-height:1.4;
 }
 
 
@@ -1077,9 +1096,27 @@ main .btn-primary:last-of-type{
 }
 
 .locatie.service {
-  align-items: center; /* of flex-start als je dat mooier vindt */
+  align-items: center;
   gap: 32px;
 }
+
+/* Locaties optie B */
+.loc-service-block { margin-bottom: 1.5rem; }
+.loc-service-block + .loc-service-block { padding-top: 1.5rem; border-top: 0.5px solid #e2e8f0; }
+.loc-service-heading { font-size: 1rem; font-weight: 500; margin-bottom: 1rem; }
+.loc-items { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; }
+.loc-item {}
+.loc-item address { font-style: normal; font-size: 0.875rem; color: #64748b; line-height: 1.6; margin-bottom: 0.75rem; }
+.loc-item address strong { color: var(--text); font-weight: 500; display: block; margin-bottom: 2px; }
+.day-pills { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-bottom: 0.75rem; }
+.day-pill { font-size: 0.8rem; border: 0.5px solid #e2e8f0; border-radius: 6px; padding: 5px 12px; line-height: 1.3; display: flex; gap: 10px; align-items: baseline; }
+.day-pill .pill-day { font-weight: 500; min-width: 72px; }
+.day-pill .pill-time { color: #64748b; font-size: 0.78rem; }
+.locaties-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; margin-top: 1.5rem; }
+.locaties-map { }
+.locaties-map > div { width: 100%; height: 420px; border-radius: 8px; border: 0.5px solid #e2e8f0; }
+.brand-green { color: #015742; }
+@media (max-width: 768px) { .locaties-layout { grid-template-columns: 1fr; } }
 
 
 /* ============================================================

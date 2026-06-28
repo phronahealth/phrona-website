@@ -6,8 +6,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Afspraak maken · Phrona Health</title>
-  <meta name="description" content="Neem contact op met Phrona Health in Amsterdam. Plan een intake voor diëtetiek of fysiotherapie. Banstraat 29, 1071 JW Amsterdam — 06 17660635."/>
-  <link rel="stylesheet" href="/assets/css/style.css"/>
+  <meta name="description" content="Neem contact op met Phrona Health in Amsterdam. Plan een intake voor diëtetiek of fysiotherapie. Banstraat 29, 1071 JW Amsterdam. Tel: 06 17 66 06 35."/>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 </head>
 <body>
   <div id="site-header"></div>
@@ -28,7 +31,7 @@
 
     <!-- Contact + illustratie -->
     <section class="card contact-hero fade-section" aria-labelledby="contact-opties">
-      <img src="/assets/img/contact.png" alt="Illustratie contactmoment">
+      <img src="assets/img/contact.png" alt="Illustratie contactmoment">
       <div>
         <h2 id="contact-opties">Contactopties</h2>
         <ul class="contact-links">
@@ -36,28 +39,27 @@
           <li data-ani><strong>WhatsApp:</strong> <a class="link" href="https://wa.me/31617660635" rel="noopener" style="color:inherit; text-decoration:none;">06 17 66 06 35</a></li>
           <li data-ani><strong>E-mail:</strong> <a class="link" href="mailto:info@phrona.nl">info@phrona.nl</a></li>
         </ul>
-        <p data-ani style="margin-top:1rem; color:#64748b; font-size:0.9rem;">
-          We reageren binnen twee werkdagen.
+        <p data-ani style="margin-top:1.75rem; color:#64748b; font-size:0.9rem;">
+          We reageren meestal binnen twee werkdagen.
         </p>
         <p data-ani style="margin-top:0.5rem; color:#64748b; font-size:0.9rem;">
-          Diëtetiek is vaak (deels) vergoed vanuit je basisverzekering — check je polis of neem contact op voor meer informatie.
+          Diëtetiek is vaak (deels) vergoed vanuit je basisverzekering. Check je polis of neem contact op voor meer informatie.
+        </p>
+        <p data-ani style="margin-top:0.5rem; color:#64748b; font-size:0.9rem;">
+          Fysiotherapie wordt vaak (deels) vergoed vanuit je aanvullende verzekering. Check je polis of neem contact op voor meer informatie.
         </p>
       </div>
     </section>
 
     <!-- Formulier -->
     <section class="fade-section" aria-labelledby="contactformulier">
-      <form class="form card"
-            action="https://formsubmit.co/info@phrona.nl"
-            method="POST">
+      <form class="form card" id="contactform"
+            data-endpoint="https://script.google.com/macros/s/AKfycbymUQxdDq7O3JJXg8150DaMVJKG07A8zLwafBJW86Tek3p7C9jb07Hz-hnu-KMY8GtJ/exec"
+            data-redirect="bedankt.html">
         <h2 id="contactformulier" data-ani>Contactformulier</h2>
 
-        <!-- FormSubmit settings -->
-        <input type="hidden" name="_subject" value="Nieuw bericht via Phrona Health website">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://phrona.nl/bedankt">
-        <input type="hidden" name="_captcha" value="true">
-        <input type="text" name="_honey" style="display:none">
+        <!-- Honeypot: bots vullen dit in, mensen niet -->
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
 
         <div class="grid" data-ani>
           <label>Naam
@@ -75,9 +77,9 @@
           <label>Onderwerp
             <select name="onderwerp" required>
               <option value="" disabled selected hidden>Kies onderwerp</option>
-              <option>Diëtetiek</option>
-              <option>Fysiotherapie</option>
-              <option>Bedrijfsbegeleiding</option>
+              <option>Diëtetiek (Serhat)</option>
+              <option>Fysiotherapie (Mete)</option>
+              <option>Consultancy</option>
               <option>Algemene vraag</option>
             </select>
           </label>
@@ -88,14 +90,17 @@
           </label>
         </div>
 
+        <p class="full" style="color:#64748b; font-size:0.875rem;">
+          Vul via dit formulier <strong>geen medische gegevens of BSN</strong> in. Houd je bericht algemeen; gevoelige informatie bespreken we veilig tijdens je afspraak.
+        </p>
+
         <label class="full consent">
           <input type="checkbox" name="toestemming" required>
-          Door dit contactformulier in te vullen verklaar je kennis te hebben genomen van onze
-          <a class="link" href="/privacy">Privacyverklaring</a> en
-          <a class="link" href="/algemenevoorwaarden">Algemene Voorwaarden.</a>
+          <span>Door dit contactformulier in te vullen verklaar je kennis te hebben genomen van onze <a class="link" href="privacy.html">Privacyverklaring</a> en <a class="link" href="algemenevoorwaarden.html">Algemene Voorwaarden</a>.</span>
         </label>
 
         <button type="submit" class="btn btn-primary">Versturen</button>
+        <p id="form-status" role="status" aria-live="polite" style="margin-top:10px; display:none;"></p>
 
         <p style="margin-top:10px; color:#334155;">
           Lukt verzenden niet? Bel <a class="link" href="tel:+31617660635" style="color:inherit; text-decoration:none;">06 17 66 06 35</a> of stuur een bericht via
@@ -107,47 +112,59 @@
     <!-- Locaties -->
     <section class="content fade-section" id="locatie">
       <h2>Locaties en openingstijden</h2>
-      <div class="service">
-        <div>
-          <address style="font-style:normal">
-            <strong>Phrona Health</strong><br>
-            Banstraat 29<br>
-            1071 JW Amsterdam<br>
-          </address>
-          <p>
-            <a class="btn-primary small"
-               href="https://maps.google.com/?q=Phrona+Health,+Banstraat+29,+1071+JW+Amsterdam"
-               target="_blank" rel="noopener">
-              Open in Google Maps
-            </a>
-          </p>
-        </div>
+      <div class="locaties-layout">
+        <div class="locaties-info">
+          <div class="loc-service-block" data-ani>
+            <p class="loc-service-heading"><strong class="brand-green">Phrona</strong> Diëtetiek</p>
+            <div class="loc-items">
+              <div class="loc-item">
+                <address>
+                  <strong>Amsterdam</strong>
+                  Banstraat 29<br>1071 JW Amsterdam
+                </address>
+                <div class="day-pills">
+                  <span class="day-pill"><span class="pill-day">Maandag</span><span class="pill-time">17:00–21:00</span></span>
+                  <span class="day-pill"><span class="pill-day">Dinsdag</span><span class="pill-time">17:00–21:00</span></span>
+                  <span class="day-pill"><span class="pill-day">Zaterdag</span><span class="pill-time">14:00–21:00</span></span>
+                  <span class="day-pill"><span class="pill-day">Zondag</span><span class="pill-time">14:00–21:00</span></span>
+                </div>
+                <a class="btn-primary small" href="https://maps.google.com/?q=Banstraat+29,+1071+JW+Amsterdam" target="_blank" rel="noopener">Open in Google Maps</a>
+              </div>
+            </div>
+          </div>
 
-        <div>
-          <div class="openingstijden">
-            <h3>Openingstijden</h3>
-            <table class="openingstijden-table" aria-describedby="locatie">
-              <tbody>
-                <tr><td>Maandag</td><td class="time">17:00–21:00</td></tr>
-                <tr><td>Dinsdag</td><td class="time">17:00–21:00</td></tr>
-                <tr><td>Woensdag</td><td class="time">17:00–21:00</td></tr>
-                <tr><td>Donderdag</td><td class="time">17:00–21:00</td></tr>
-                <tr><td>Vrijdag</td><td class="time">17:00–21:00</td></tr>
-                <tr><td>Zaterdag</td><td class="time">14:00–21:00</td></tr>
-                <tr><td>Zondag</td><td class="time">14:00–21:00</td></tr>
-              </tbody>
-            </table>
+          <div class="loc-service-block" data-ani>
+            <p class="loc-service-heading"><strong class="brand-green">Phrona</strong> Fysiotherapie</p>
+            <div class="loc-items">
+              <div class="loc-item">
+                <address>
+                  <strong>Zaandam</strong>
+                  Westzijde 163<br>1506 GC Zaandam
+                </address>
+                <div class="day-pills">
+                  <span class="day-pill"><span class="pill-day">Donderdag</span><span class="pill-time">09:00–13:30</span></span>
+                  <span class="day-pill"><span class="pill-day">Vrijdag</span><span class="pill-time">09:00–15:00</span></span>
+                </div>
+                <a class="btn-primary small" href="https://maps.google.com/?q=Westzijde+163,+1506+GC+Zaandam" target="_blank" rel="noopener">Open in Google Maps</a>
+              </div>
+              <div class="loc-item">
+                <address>
+                  <strong>Amsterdam-Noord</strong>
+                  Distelweg 80<br>1031 HH Amsterdam
+                </address>
+                <div class="day-pills">
+                  <span class="day-pill"><span class="pill-day">Dinsdag</span><span class="pill-time">09:00–17:00</span></span>
+                  <span class="day-pill"><span class="pill-day">Donderdag</span><span class="pill-time">14:00–19:00</span></span>
+                </div>
+                <a class="btn-primary small" href="https://maps.google.com/?q=Distelweg+80,+1031+HH+Amsterdam" target="_blank" rel="noopener">Open in Google Maps</a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="map-embed">
-        <iframe
-          title="Kaart Phrona Health"
-          src="https://www.google.com/maps?q=Banstraat+29,+1071+JW+Amsterdam&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <div class="locaties-map">
+          <div id="locaties-kaart"></div>
+        </div>
       </div>
     </section>
 
@@ -163,6 +180,60 @@
   </main>
 
   <div id="site-footer"></div>
-  <script src="/assets/js/load-partials.js"></script>
+  <script src="assets/js/load-partials.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script>
+    var map = L.map('locaties-kaart').setView([52.40, 4.865], 11);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+    var icon = L.divIcon({ className: '', html: '<div style="width:14px;height:14px;background:#015742;border:2px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,.3)"></div>', iconSize:[14,14], iconAnchor:[7,7] });
+    L.marker([52.3589, 4.8897], {icon}).addTo(map).bindPopup('<strong>Phrona Diëtetiek</strong><br>Banstraat 29<br>Amsterdam');
+    L.marker([52.4381, 4.8134], {icon}).addTo(map).bindPopup('<strong>Phrona Fysiotherapie</strong><br>Westzijde 163<br>Zaandam');
+    L.marker([52.4047, 4.9071], {icon}).addTo(map).bindPopup('<strong>Phrona Fysiotherapie</strong><br>Distelweg 80<br>Amsterdam-Noord');
+  </script>
+  <script>
+    (function () {
+      var form = document.getElementById('contactform');
+      if (!form) return;
+      var status = document.getElementById('form-status');
+      var btn = form.querySelector('button[type="submit"]');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Honeypot: ingevuld = bot, doe alsof het gelukt is en stop
+        if (form.website && form.website.value) return;
+
+        // Validatie
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+
+        var params = new URLSearchParams();
+        params.append('naam', form.naam.value);
+        params.append('email', form.email.value);
+        params.append('telefoon', form.telefoon.value);
+        params.append('onderwerp', form.onderwerp.value);
+        params.append('bericht', form.bericht.value);
+
+        btn.disabled = true;
+        btn.textContent = 'Versturen…';
+
+        fetch(form.dataset.endpoint, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString()
+        }).then(function () {
+          window.location.href = form.dataset.redirect;
+        }).catch(function () {
+          btn.disabled = false;
+          btn.textContent = 'Versturen';
+          status.style.display = 'block';
+          status.style.color = '#b91c1c';
+          status.textContent = 'Er ging iets mis. Bel of WhatsApp ons gerust.';
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
