@@ -4,13 +4,15 @@
   <url><loc>https://phrona.nl/diensten.html</loc><priority>0.9</priority></url>
   <url><loc>https://phrona.nl/dietetiek.html</loc><priority>0.9</priority></url>
   <url><loc>https://phrona.nl/fysiotherapie.html</loc><priority>0.9</priority></url>
-  <url><loc>https://phrona.nl/consultancy.html</loc><priority>0.9</priority></url>
   <url><loc>https://phrona.nl/over.html</loc><priority>0.8</priority></url>
   <url><loc>https://phrona.nl/serhat.html</loc><priority>0.7</priority></url>
   <url><loc>https://phrona.nl/mete.html</loc><priority>0.7</priority></url>
   <url><loc>https://phrona.nl/tarieven.html</loc><priority>0.8</priority></url>
   <url><loc>https://phrona.nl/kennisbank.html</loc><priority>0.7</priority></url>
   <url><loc>https://phrona.nl/evodenken.html</loc><priority>0.6</priority></url>
+  <url><loc>https://phrona.nl/slaap.html</loc><priority>0.6</priority></url>
+  <url><loc>https://phrona.nl/gewoontevorming.html</loc><priority>0.6</priority></url>
+  <url><loc>https://phrona.nl/supplementen.html</loc><priority>0.6</priority></url>
   <url><loc>https://phrona.nl/breinvoeding.html</loc><priority>0.6</priority></url>
   <url><loc>https://phrona.nl/nutrient.html</loc><priority>0.6</priority></url>
   <url><loc>https://phrona.nl/bedrijvenenvoeding.html</loc><priority>0.6</priority></url>
@@ -22,13 +24,15 @@
   <url><loc>https://phrona.nl/EN/services.html</loc><priority>0.9</priority></url>
   <url><loc>https://phrona.nl/EN/dietetics.html</loc><priority>0.9</priority></url>
   <url><loc>https://phrona.nl/EN/physiotherapy.html</loc><priority>0.9</priority></url>
-  <url><loc>https://phrona.nl/EN/consultancy.html</loc><priority>0.9</priority></url>
   <url><loc>https://phrona.nl/EN/about.html</loc><priority>0.8</priority></url>
   <url><loc>https://phrona.nl/EN/serhat.html</loc><priority>0.7</priority></url>
   <url><loc>https://phrona.nl/EN/mete.html</loc><priority>0.7</priority></url>
   <url><loc>https://phrona.nl/EN/rates.html</loc><priority>0.8</priority></url>
   <url><loc>https://phrona.nl/EN/knowledge-base.html</loc><priority>0.7</priority></url>
   <url><loc>https://phrona.nl/EN/evolutionary-thinking.html</loc><priority>0.6</priority></url>
+  <url><loc>https://phrona.nl/EN/sleep.html</loc><priority>0.6</priority></url>
+  <url><loc>https://phrona.nl/EN/habit-formation.html</loc><priority>0.6</priority></url>
+  <url><loc>https://phrona.nl/EN/supplements.html</loc><priority>0.6</priority></url>
   <url><loc>https://phrona.nl/EN/brain-nutrition.html</loc><priority>0.6</priority></url>
   <url><loc>https://phrona.nl/EN/nutrient.html</loc><priority>0.6</priority></url>
   <url><loc>https://phrona.nl/EN/corporate-nutrition.html</loc><priority>0.6</priority></url>

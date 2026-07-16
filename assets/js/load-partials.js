@@ -33,7 +33,6 @@ const NL_HEADER = `<div id="top"></div>
           <ul class="submenu" aria-label="Submenu Diensten">
             <li><a href="dietetiek.html">Di&euml;tetiek</a></li>
             <li><a href="fysiotherapie.html">Fysiotherapie</a></li>
-            <li><a href="consultancy.html">Consultancy</a></li>
           </ul>
         </li>
         <li><a href="tarieven.html">Tarieven</a></li>
@@ -124,7 +123,6 @@ const EN_HEADER = `<div id="top"></div>
           <ul class="submenu">
             <li><a href="dietetics.html">Dietetics</a></li>
             <li><a href="physiotherapy.html">Physiotherapy</a></li>
-            <li><a href="consultancy.html">Consultancy</a></li>
           </ul>
         </li>
         <li><a href="rates.html">Fees</a></li>
@@ -228,7 +226,7 @@ initBackToTop();
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('inview'); io.unobserve(e.target); }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0 });
 
   document.querySelectorAll('.fade-section').forEach(s => io.observe(s));
 })();
